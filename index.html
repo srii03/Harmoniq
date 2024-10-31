@@ -3,37 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One-Minute Tone Player</title>
+  <title>Harmoniq - DJ Pad</title>
   <style>
+    /* Base Styling */
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 50px;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #0a162b; /* Maastricht Blue */
+      color: #ffffff; /* White text for contrast */
     }
-    .tone-button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin: 10px;
-      background-color: #4CAF50;
-      color: white;
+    
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #9d632c; /* Dark Gold for the title */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    /* DJ Pad Grid */
+    .dj-pad {
+      display: grid;
+      grid-template-columns: repeat(4, 80px);
+      grid-gap: 15px;
+      animation: slideIn 1s ease-in-out forwards;
+    }
+
+    /* Button Styles */
+    .pad-button {
+      width: 80px;
+      height: 80px;
+      background: #122242; /* Yankees Blue */
       border: none;
-      border-radius: 5px;
+      border-radius: 15px;
+      color: #ffffff; /* White text */
+      font-size: 1em;
+      font-weight: bold;
       cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 0 10px #1b3350; /* Space Cadet */
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .tone-button:hover {
-      background-color: #45a049;
+
+    /* Hover and Active Effects */
+    .pad-button:hover {
+      background: #1b3350; /* Space Cadet for hover effect */
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px #9d632c; /* Dark Gold glow */
+    }
+    .pad-button:active {
+      transform: scale(0.9);
+      background: #a04a11; /* Metallic Brown for active */
+    }
+
+    /* Button Animation Effect */
+    .pad-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transform: rotate(45deg);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .pad-button:hover::before {
+      opacity: 0.2;
+      transform: rotate(45deg) translate(20%, 20%);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
   </style>
 </head>
 <body>
 
-<h1>One-Minute Tone Player</h1>
+<h1>Harmoniq - Pad</h1>
 
-<button class="tone-button" onclick="playTone(440)">Play Tone 1 (440 Hz)</button>
-<button class="tone-button" onclick="playTone(523.25)">Play Tone 2 (523.25 Hz)</button>
-<button class="tone-button" onclick="playTone(659.25)">Play Tone 3 (659.25 Hz)</button>
+<div class="dj-pad">
+  <button class="pad-button" onclick="playTone(261.63, 'sine')">Beat 1</button>
+  <button class="pad-button" onclick="playTone(293.66, 'square')">Beat 2</button>
+  <button class="pad-button" onclick="playTone(329.63, 'sawtooth')">Beat 3</button>
+  <button class="pad-button" onclick="playTone(349.23, 'triangle')">Beat 4</button>
+  <button class="pad-button" onclick="playTone(392.00, 'sine')">Beat 5</button>
+  <button class="pad-button" onclick="playTone(440.00, 'square')">Beat 6</button>
+  <button class="pad-button" onclick="playTone(493.88, 'sawtooth')">Beat 7</button>
+  <button class="pad-button" onclick="playTone(523.25, 'triangle')">Beat 8</button>
+  <button class="pad-button" onclick="playTone(587.33, 'sine')">Beat 9</button>
+  <button class="pad-button" onclick="playTone(659.25, 'square')">Beat 10</button>
+  <button class="pad-button" onclick="playTone(698.46, 'sawtooth')">Beat 11</button>
+  <button class="pad-button" onclick="playTone(783.99, 'triangle')">Beat 12</button>
+  <button class="pad-button" onclick="playTone(880.00, 'sine')">Beat 13</button>
+  <button class="pad-button" onclick="playTone(987.77, 'square')">Beat 14</button>
+  <button class="pad-button" onclick="playTone(1046.50, 'sawtooth')">Beat 15</button>
+  <button class="pad-button" onclick="playTone(1174.66, 'triangle')">Beat 16</button>
+</div>
 
 <script src="script.js"></script>
 
 </body>
 </html>
+
