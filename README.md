@@ -51,14 +51,13 @@ If you have any questions or suggestions, feel free to reach out to me at nairsr
 
 Feel free to explore, contribute, and enjoy creating beats with Harmoniq!
 
-css
+markdown
 Copy code
 
-### Key Changes
-- Your email address has been included in the Contact section, making it easy for users to reach out with questions or suggestions.
+### Instructions
+1. Open your `README.md` file in your project repository.
+2. Copy the above text.
+3. Paste it into your `README.md` file.
+4. Save the changes.
 
-### Next Steps
-- You can copy this updated content into your `README.md` file in your project repository.
-- Make sure to review the rest of your repository for any additional details you might want to add or modify.
-
-If you need further adjustments or additional content, feel free to ask!
+If you have any more requests or need further assistance, let me know!
