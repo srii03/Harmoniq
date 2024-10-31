@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One-Minute Tone Player</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .tone-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tone-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<h1>One-Minute Tone Player</h1>
+
+<button class="tone-button" onclick="playTone(440)">Play Tone 1 (440 Hz)</button>
+<button class="tone-button" onclick="playTone(523.25)">Play Tone 2 (523.25 Hz)</button>
+<button class="tone-button" onclick="playTone(659.25)">Play Tone 3 (659.25 Hz)</button>
+
+<script src="script.js"></script>
+
+</body>
+</html>
